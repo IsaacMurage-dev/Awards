@@ -27,7 +27,7 @@
 		</div>
 	</div>
 </div>
-<div class="container mt-5">
+<div class="container-fluid mt-5">
 	<h1 class="text-center">Project(s) displayed</h1>
 	<hr style="width: 80px">
 	{% for project in posts %}
@@ -52,4 +52,16 @@
 	{% endfor %}
 
 </div>
+<style>
+	.container{
+		background-image: url("https://media.istockphoto.com/photos/white-wooden-background-for-mockups-picture-id1156237830?k=20&m=1156237830&s=612x612&w=0&h=dZYk6fX7WciIlbHc_OxrVxFTdbA1iEjUzA_YdlKFkqI=");
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	.container-fluid{
+		background-image: url("https://media.istockphoto.com/photos/white-gray-gradient-background-abstract-background-picture-id648280890?k=20&m=648280890&s=612x612&w=0&h=PN92wqJgtgXFn1YOXFF-e8NpmGfE_MdUeuAgbBRvFdE=");
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+</style>
 {% endblock %}
