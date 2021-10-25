@@ -3,12 +3,12 @@
 {% load static %}
 {% block content %}
 <div class="container mt-5" style="font-size: 15px;">
-	<div class="card rounded p-5 font-weight-bold">
+	<div class="card rounded  font-weight-bold">
 		<form action="{%  url 'edit' %}" method="post" enctype="multipart/form-data">
 			{% csrf_token %}
 			{% bootstrap_form new_profile %}
 			<div class="form-group" style="text-align: center">
-				<input type="submit" class="btn btn-success btn-md" value="Update">
+				<input type="submit" class="btn btn-info btn-md" value="Update">
 			</div>
 		</form>
 	</div>
