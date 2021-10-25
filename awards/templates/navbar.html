@@ -1,0 +1,64 @@
+<!-- 
+example 3 - Navbar with brand left, links on center and right that collapse into the vert mobile menu
+-->
+<!-- <nav class="navbar navbar-success navbar-expand-md justify-content-center border-bottom sticky-top"> -->
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+    <div class="navbar-brand d-flex w-50 mr-auto brand-size ml-4  font-weight-bold m-0 p-0">
+        <ul class="navbar-nav">
+            <li onclick="openNav()">
+                <a class="nav-link brand-size" href="#"><i class=""></i><span
+                        class="d-flex float-right mt-1">MENU</span></a>
+            </li>
+            <li class="nav-item ml-4">
+                <a class="nav-link my-3" href="#" id="search"><i class="material-icons hvr-grow ">search</i></a>
+            </li>
+            <li class="nav-item">
+                <input class="my-4 form-control" type="text" id="myInput" onkeyup="mySearch()"
+                    placeholder="Search for project..">
+            </li>
+        </ul>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
+        <!-- <ul class="navbar-nav w-100 justify-content-center">
+                <li class="nav-item">
+                    <p class="nav-link nav-title text-dark my-2 hvr-grow "><a class="text-dark" href="{% url 'index' %}">Rate
+                        &middot; A
+                        &middot; Peer</a></p>
+                </li>
+            </ul> -->
+        <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link nav-font text-dark font-weight-bold py-3 my-3 text-uppercase hvr-grow "
+                    href="{% url 'profile' %}">{{ user.profile.user }}</a>
+            </li>
+
+            <li class="nav-item">
+                <div class="dropdown my-2">
+
+                    <div class="dropdown-content font-weight-bold log ">
+                        <a href="{% url 'profile' %}" class="">Profile</a><br>
+                        <!-- <a href="#" class="">Activity</a><br> -->
+                        <a href="/logout" class=""><span class="">Log
+                                Out </span></a>
+                    </div>
+                </div>
+            </li>
+            {% else %}
+            <li class="nav-item">
+                <a class="nav-link nav-font text-dark font-weight-bold p-3 my-3" href="" data-toggle="modal"
+                    data-target="#exampleModalCenter">REGISTER/ LOG IN</a>
+            </li>
+            {% endif %}
+
+            <li class="nav-item submit-color">
+                <a class="nav-link nav-font text-dark-blue font-weight-bold py-3 my-2 px-2" style="background-color: whitesmoke;"
+                    href="{% url 'new_post' %}">Add a Project</a> 
+            </li>
+        </ul>
+    </div>
+</nav>

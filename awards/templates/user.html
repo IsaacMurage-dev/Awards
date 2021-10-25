@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+<div class="container">
+	<span class="float-left container ml-5 mt-3">
+		
+	</span>
+	<div class="container">
+		<div class="profile-layout text-center">
+			<div>
+				<img src="{{ user_object.profile.image.url }}" class="rounded-circle border responsive hvr-grow" alt="..."
+				     height="100"
+				     width="100">
+			</div>
+			<h1 class="text-uppercase mt-3 font-weight-bold">{{ user_object.profile.user}}</h1>
+			<hr style="width: 120px;">
+			<a href="{{ user_object.email }}"><h4 class="text-body">{{ user_object.email }}</h4></a>
+			<div>
+				<h6 class="font-weight-bold mt-3">{{ user_object.profile.bio }}</h6>
+			</div>
+		</div>
+	</div>
+	<hr>
+</div>
+<div class="container mt-5">
+	<h1 class="text-center">Project(s)</h1>
+	<hr style="width: 80px">
+	{% for project in user_projects %}
+	<div class="row ">
+		<div class="col-md-3">
+			<img src="{{ project.image1.url }}" class="img-thumbnail" width="500">
+		</div>
+		<div class="col-md-9">
+			<p>Project Name: {{ project.sitename }}</p>
+			<p>Description: {{ project.desc }}</p>
+			<p>Technologies used: {{ project.technologies }}</p>
+			<p>Categories: {{ project.categories }}</p>
+			<p class=""><a href="{{ project.link }}">
+				<button class="btn hvr-bubble-float-bottom">Link</button>
+			</a></p>
+			<p class="text-muted float-right">{{ project.post_date }}</p>
+		</div>
+	</div>
+	<hr>
+	{% endfor %}
+
+</div>
+{% endblock %}

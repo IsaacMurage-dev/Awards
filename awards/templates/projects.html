@@ -1,0 +1,33 @@
+{%extends 'base.html'%}
+{% load bootstrap4 %}
+{% block content %}
+<div class="container mt-5">
+	<ul id="myUL">
+		{% for post in posts %}
+		<li class="row">
+			<div class="col-md-3">
+				<a href="{% url 'project' post.id %}"><span style="display: none;">{{ post.sitename }}</span><img
+								src="{{ post.image1.url }}" class="img-thumbnail" width="500"></a>
+			</div>
+			<div class="col-md-9 project-font">
+				<a class="user-head" href="{% url 'aboutuser' user_id=post.user.id %}">
+					<button class="btn bg-transparent btn-lg" data-toggle="tooltip" data-placement="bottom"
+					        title="User">
+						<!-- <img src="{{ user.profile.image.url }}" class="rounded-circle" width="40" height="40"> -->
+					<span class="username mx-2" style="font-size: 25px;">{{post.user}}</span></button></a>
+				<div class="ml-4">
+					<p>Project Name: {{ post.sitename }}</p>
+					<p>Description: {{ post.desc }}</p>
+					<p>Technologies used: {{ post.technologies }}</p>
+					<p>Categories: {{ post.categories }}</p>
+					<p class=""><a href="{{ post.link }}">
+						<button class="btn-info ">Link</button>
+					</a></p>
+					<p class="text-muted">Posted on: {{ post.post_date }}</p>
+				</div>
+			</div>
+		</li>
+		{% endfor %}
+	</ul>
+</div>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+	<span class=" container">
+	</span>
+	<div class="container ">
+		<div class="">
+			<div>
+				<img src="{{ user.profile.image.url }}" class="rounded-circle border responsive hvr-grow" alt="..."
+					height="100" width="100">
+			</div>
+			<h1 class="text-uppercase mt-3 font-weight-bold">{{ user.profile.user }}</h1>
+			<!-- <hr style="width: 80px;"> -->
+			<a href="{{ user.email }}">
+				<h4 class="text-body">{{ user.email }}</h4>
+			</a>
+			<div>
+				<h6 class="font-weight-bold mt-3">{{ user.profile.bio }}</h6>
+			</div>
+			<div>
+				<br>
+				<a href="{%  url 'edit' %}" style="text-decoration: none;">
+					<button class="btn btn-lg btn-info  ">Edit your Profile</button>
+				</a>
+			</div>
+			<span class="text-muted">Modified on: {{ user.profile.updated_at }}</span>
+		</div>
+	</div>
+</div>
+<div class="container mt-5">
+	<h1 class="text-center">Project(s) displayed</h1>
+	<hr style="width: 80px">
+	{% for project in posts %}
+	{% if project.user == user.profile.user %}
+	<div class="row ">
+		<div class="col-md-3">
+			<img src="{{ project.image1.url }}" class="img-thumbnail" width="500">
+		</div>
+		<div class="col-md-9">
+			<p>Project Name: {{ project.sitename }}</p>
+			<p>Description: {{ project.desc }}</p>
+			<p>Technologies: {{ project.technologies }}</p>
+			<p>Categories: {{ project.categories }}</p>
+			<p class=""><a href="{{ project.link }}">
+					<button class="btn-info ">LINK</button>
+				</a></p>
+			<p class="text-muted">Posted on:{{ project.post_date }}</p>
+		</div>
+	</div>
+	<hr>
+	{% endif %}
+	{% endfor %}
+
+</div>
+{% endblock %}
