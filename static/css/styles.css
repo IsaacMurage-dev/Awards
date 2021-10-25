@@ -1,0 +1,234 @@
+html {
+  scroll-behavior: smooth;
+}
+body{
+font-family: 'Nunito', sans-serif;
+background-color: #EBF6F6;
+transition: 1s;
+overflow-x: hidden;
+overflow-y: auto;
+}
+
+/**spinner**/
+/* .spinner {
+  width: 60px;
+  height: 60px;
+  background-color: #333;
+  position: absolute;
+    top: 48%;
+    left: 48%;
+  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
+} */
+
+@-webkit-keyframes sk-rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes sk-rotateplane {
+  0% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+  } 50% {
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+  } 100% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
+
+.spinner-wrapper {
+/* position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #0FB9AA;
+z-index: 999999;
+} */
+
+/**end of spinner**/
+
+a, u {
+    text-decoration: none !important;
+}
+
+.navbar{
+    margin: 0;
+    padding: 0;
+    background-color: #EBF6F6;
+}
+.brand-size{
+    font-size: 14px;
+}
+
+.search{
+    margin-left: -900%;
+}
+
+.nav-title{
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.nav-font{
+    font-size: 14px;
+}
+.centered{
+    margin-left: 56%;
+}
+.submit-color{
+transition: 1s;
+    background-color: #0FB9AA;
+}
+.submit-color:hover{
+    transition: 1s;
+    background-color: #109E93;
+}
+
+.custom-pad{
+    border-right: 10px;
+}
+
+.upper-text{
+    font-size: 14.5px;
+    font-weight: 550;
+}
+
+.feather-16{
+    width: 16px;
+    height: 16px;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: transparent;
+  color: black;
+  border: none;
+}
+
+.dropbtn:hover{
+    cursor:pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: whitesmoke;
+  opacity: 0.8;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  font-size: 14px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+/* Links inside the dropdown */
+.dropdown-content a:hover{
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover { transition: 1s;background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block; transition: 1s}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: whitesmoke; transition: 1s}
+
+/* Bubble Float Bottom */
+.hvr-bubble-float-bottom {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-bubble-float-bottom:before {
+  position: absolute;
+  left: calc(50% - 10px);
+  bottom: 0;
+  border-style: solid;
+  border-width: 10px 10px 0 10px;
+  border-color: #e1e1e1 transparent transparent transparent;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-bubble-float-bottom:hover, .hvr-bubble-float-bottom:focus, .hvr-bubble-float-bottom:active {
+  -webkit-transform: translateY(-10px);
+}
+.feather-18{
+    height: 18px;
+    width: 18px;
+}
+
+.feather-12{
+    height: 12px;
+    width: 12px;
+}
+
+.md-18{
+    height: 18px;
+    width: 18px;
+}
+
+/* Grow */
+.hvr-grow {
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+/* Glow */
+.hvr-glow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+}
+.hvr-glow:hover, .hvr-glow:focus, .hvr-glow:active {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}
