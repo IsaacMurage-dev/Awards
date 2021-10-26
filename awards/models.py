@@ -4,11 +4,12 @@ from django.dispatch import receiver
 from django.utils import timezone
 from django.db.models.signals import post_save
 from tinymce.models import HTMLField
+from cloudinary.models import CloudinaryField
 
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
-    image = models.ImageField(upload_to='profile_pics/', default='profile_pics/default.jpg')
+    image = CloudinaryField('images')
     bio = models.TextField(default="Please update your bio!")
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -27,9 +28,9 @@ class Post(models.Model):
     sitename = models.CharField(max_length=50)
     desc = HTMLField()
     post_date = models.DateTimeField(default=timezone.now)
-    image1 = models.ImageField(upload_to='projects/')
-    image2 = models.ImageField(upload_to='projects/', default='projects/image2.jpg')
-    image3 = models.ImageField(upload_to='projects/', default='projects/image3.jpg')
+    image1 = CloudinaryField('images')
+    image2 = CloudinaryField('images')
+    image3 = CloudinaryField('images')
     link = models.CharField(max_length=70)
     technologies = models.CharField(max_length=100)
     categories = models.CharField(max_length=100)
