@@ -38,7 +38,7 @@ Awards is a web application built to showcase projects that have been done by va
 * PostgreSQL
 
 ## Deployment
-This is the live link to the project: <a href="">Awards</a>
+This is the live link to the project: <a href="https://aizoawwards.herokuapp.com/">Awards</a>
 
 ### License
 This project is under [MIT](https://choosealicense.com/licenses/mit/) &COPY; 2021 All Rights Reserved.

@@ -13,14 +13,14 @@
 				<a class="user-head" href="{% url 'aboutuser' user_id=post.user.id %}">
 					<button class="btn bg-transparent btn-lg" data-toggle="tooltip" data-placement="bottom"
 					        title="User">
-						<img src="{{ project.image2.url }}" class="rounded-circle" width="40" height="30">
+						<!-- <img src="{{ project.image2.url }}" class="rounded-circle" width="40" height="30"> -->
 					<span class="username mx-2" style="font-size: 25px;">{{post.user}}</span></button></a>
 				<div class="ml-4">
 					<p>Project Name: {{ post.sitename }}</p>
 					<p>Description: {{ post.desc }}</p>
 					<p>Technologies used: {{ post.technologies }}</p>
 					<p>Categories: {{ post.categories }}</p>
-                     <p>Ratings ***</p>
+                     <p>Ratings ********</p>
 					<p class=""><a href="{{ post.link }}">
 						<button class="btn-info ">Check it out</button>
 					</a></p>
