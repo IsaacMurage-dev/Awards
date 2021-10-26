@@ -6,17 +6,24 @@
 	<div class="row">
 		<div class="col-md-4 col-sm-3 col-xs-2"></div>
 		<div class="col-md-4 col-sm-6 col-xs-8">
-			<h2 class="text-center">Rate </h2>
+			<h2 class="text-center">Rate any project(s) </h2>
 			<br>
 			<form style="border:white" action="{% url 'review' project.id %}" method="post" enctype="multipart/form-data">
 				{%csrf_token%}
 
 				<i><span class="rate-form"> {% bootstrap_form form%}
-              <input type="submit" class="btn btn-primary btn-sm" value="Next"></span></i>
+              <input type="submit" class="btn btn-info btn-sm" value="Next"></span></i>
 			</form>
 		</div>
 		<br>
-		<div class="col-md-4 col-sm-3 col-xs-2"></div>
+		<div class="col-md-4 "></div>
 	</div>
 </div>
+<style>
+	.container{
+		background-image: url("https://media.istockphoto.com/photos/abstract-background-picture-id1145178576?k=20&m=1145178576&s=612x612&w=0&h=DeOI8DQFyTr13lAl58sCHN2-rmEilVc_vUa4vppR3UU=");
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+</style>
 {% endblock %}
