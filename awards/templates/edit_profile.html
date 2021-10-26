@@ -2,7 +2,7 @@
 {% load bootstrap4 %}
 {% load static %}
 {% block content %}
-<div class="container mt-5" style="font-size: 15px;">
+<div class="container" style="font-size: 15px;">
 	<div class="card rounded  font-weight-bold">
 		<form action="{%  url 'edit' %}" method="post" enctype="multipart/form-data">
 			{% csrf_token %}
@@ -13,4 +13,10 @@
 		</form>
 	</div>
 </div>
+<style>
+	.container{
+		/* background-image: url("https://media.istockphoto.com/photos/abstract-blurred-white-color-background-with-bokeh-light-for-design-picture-id1059959980?k=20&m=1059959980&s=612x612&w=0&h=VNIaIPlY3gQVpYzy30CBpK_WFTeVwpCoDw_6aAtYVkE="); */
+		background-size: cover;
+	}
+</style>
 {% endblock %}
